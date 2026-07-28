@@ -14,7 +14,7 @@ function calculateTotal(cartItems) {
 
 function applyDiscount(total, discountRate) {
   if (typeof discountRate !== "number" || discountRate < 0 || discountRate > 1) {
-    return total;;
+    return total;
   }
   return total - total * discountRate; 
 }  
@@ -36,3 +36,11 @@ const receipt = generateReceipt(cart, discountedTotal);
 
 document.getElementById("total").textContent = `Total: $${discountedTotal}`;
 document.getElementById("receipt").textContent = receipt;
+
+
+// in line 9: <= is replaced by < because Sources Tab Breakpoints: Setting a breakpoint inside the for loop reveals that on the final iteration, 
+//            i equals 3. Because cartItems.length is 3, cartItems[3] returns undefined, which throws an error when trying to access .price.
+//            Console Tab Error: You will encounter an immediate runtime error: TypeError: Cannot read properties of undefined (reading 'price'). 
+//            This points directly to the calculateTotal function.
+//in line 16: we have added validation for discount to make sure its a number and in between 0 and 1.
+//in line 27: Added type checking before calling .toFixed(2) to prevent application-breaking type errors.
