@@ -14,6 +14,7 @@ function calculateTotal(cartItems) {
 
 function applyDiscount(total, discountRate) {
   if (typeof discountRate !== "number" || discountRate < 0 || discountRate > 1) {
+    console.log("Invalid! must be between 0 and 1");
     return total;
   }
   return total - total * discountRate; 
