@@ -44,3 +44,6 @@ document.getElementById("receipt").textContent = receipt;
 //            This points directly to the calculateTotal function.
 //in line 16: we have added validation for discount to make sure its a number and in between 0 and 1.
 //in line 27: Added type checking before calling .toFixed(2) to prevent application-breaking type errors.
+// the debugging tools helped to got to the line where the error was which was easy for me know the error in source by seeing in console 
+// and also by adding debugger before line 10 helped to pause the check the error line 9 was making error in line 10 because of <= 
+// where last price was becomming un defined.
